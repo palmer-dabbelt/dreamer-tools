@@ -68,3 +68,11 @@ cd "$top"/src/vcddiff/
 pconfigure
 make
 $sudo make install
+
+##############################################################################
+# flo-llvm                                                                   #
+##############################################################################
+cd "$top"/src/flo-llvm/
+pconfigure
+make
+$sudo make install

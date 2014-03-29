@@ -10,3 +10,6 @@
 [submodule "src/vcddiff"]
 	path = src/vcddiff
 	url = git://github.com/palmer-dabbelt/vcddiff.git
+[submodule "src/flo-llvm"]
+	path = src/flo-llvm
+	url = git://github.com/palmer-dabbelt/flo-llvm.git
