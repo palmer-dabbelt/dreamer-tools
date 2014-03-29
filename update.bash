@@ -1,3 +1,5 @@
+#!/bin/bash -ex
+
 top="$(pwd)"
 prefix="$top/install"
 
