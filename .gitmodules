@@ -4,3 +4,6 @@
 [submodule "src/tek"]
 	path = src/tek
 	url = git://github.com/palmer-dabbelt/tek.git
+[submodule "src/libflo"]
+	path = src/libflo
+	url = git://github.com/palmer-dabbelt/libflo.git

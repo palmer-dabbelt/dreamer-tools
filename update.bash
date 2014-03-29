@@ -52,3 +52,11 @@ cd "$top"/src/tek/
 pconfigure
 make
 $sudo make install
+
+##############################################################################
+# libflo                                                                     #
+##############################################################################
+cd "$top"/src/libflo/
+pconfigure
+make
+$sudo make install
