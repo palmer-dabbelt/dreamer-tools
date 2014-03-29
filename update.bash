@@ -6,6 +6,13 @@ git submodule update
 
 top="$(pwd)"
 prefix="$top/install"
+sudo=""
+
+if [[ "$1" != "" ]]
+then
+    prefix="$1"
+    sudo="sudo"
+fi
 
 cat >"$prefix"/enter <<EOF
 export PATH="$prefix/bin:\$PATH"
@@ -24,10 +31,10 @@ else
 fi
 
 make
-make install
+$sudo make install
 
 echo "Building tek"
 cd "$top"/src/tek/
 pconfigure
 make
-make install
+$sudo make install
