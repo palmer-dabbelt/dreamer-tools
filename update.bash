@@ -42,7 +42,7 @@ else
     ./bootstrap.sh --prefix "$prefix"
 fi
 
-make
+make all all_install
 $sudo make install
 
 ##############################################################################
@@ -50,7 +50,7 @@ $sudo make install
 ##############################################################################
 cd "$top"/src/tek/
 pconfigure
-make
+make all all_install
 $sudo make install
 
 ##############################################################################
@@ -58,7 +58,7 @@ $sudo make install
 ##############################################################################
 cd "$top"/src/libflo/
 pconfigure
-make
+make all all_install
 $sudo make install
 
 ##############################################################################
@@ -66,7 +66,7 @@ $sudo make install
 ##############################################################################
 cd "$top"/src/vcddiff/
 pconfigure
-make
+make all all_install
 $sudo make install
 
 ##############################################################################
@@ -74,7 +74,7 @@ $sudo make install
 ##############################################################################
 cd "$top"/src/flo-llvm/
 pconfigure
-make
+make all all_install
 $sudo make install
 
 ##############################################################################
@@ -82,5 +82,5 @@ $sudo make install
 ##############################################################################
 cd "$top"/src/flo-mwe/
 pconfigure
-make
+make all all_install
 $sudo make install
