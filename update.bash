@@ -1,8 +1,15 @@
 #!/bin/bash -e
 
-git pull
-git submodule init
-git submodule update
+if [[ "$1" != "--actually-run" ]]
+then
+    git pull
+    git submodule init
+    git submodule update
+    $0 --actually-run $@
+    exit $?
+fi
+
+shift
 
 top="$(pwd)"
 prefix="$top/install"
