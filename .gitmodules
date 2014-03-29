@@ -7,3 +7,6 @@
 [submodule "src/libflo"]
 	path = src/libflo
 	url = git://github.com/palmer-dabbelt/libflo.git
+[submodule "src/vcddiff"]
+	path = src/vcddiff
+	url = git://github.com/palmer-dabbelt/vcddiff.git

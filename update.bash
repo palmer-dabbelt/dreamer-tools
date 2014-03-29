@@ -60,3 +60,11 @@ cd "$top"/src/libflo/
 pconfigure
 make
 $sudo make install
+
+##############################################################################
+# vcddiff                                                                    #
+##############################################################################
+cd "$top"/src/vcddiff/
+pconfigure
+make
+$sudo make install
