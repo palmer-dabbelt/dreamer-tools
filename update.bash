@@ -25,10 +25,11 @@ source "$prefix"/enter
 echo "Building pconfigure"
 cd "$top"/src/pconfigure/
 
-if test -f Configfiles/local
+if test -f "$prefix"/bin/pconfigure
 then
     pconfigure
 else
+    rm -f Configfiles/local
     ./bootstrap.sh --prefix "$prefix"
 fi
 
