@@ -76,3 +76,11 @@ cd "$top"/src/flo-llvm/
 pconfigure
 make
 $sudo make install
+
+##############################################################################
+# flo-llvm                                                                   #
+##############################################################################
+cd "$top"/src/flo-mwe/
+pconfigure
+make
+$sudo make install

@@ -13,3 +13,6 @@
 [submodule "src/flo-llvm"]
 	path = src/flo-llvm
 	url = git://github.com/palmer-dabbelt/flo-llvm.git
+[submodule "src/flo-mwe"]
+	path = src/flo-mwe
+	url = git://github.com/palmer-dabbelt/flo-mwe.git
