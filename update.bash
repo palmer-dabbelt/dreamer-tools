@@ -22,6 +22,9 @@ export PKG_CONFIG_PATH="$prefix/lib/pkgconfig:\$PKG_CONFIG_PATH"
 EOF
 source "$prefix"/enter
 
+##############################################################################
+# pconfigure                                                                 #
+##############################################################################
 echo "Building pconfigure"
 cd "$top"/src/pconfigure/
 
@@ -36,6 +39,9 @@ fi
 make
 $sudo make install
 
+##############################################################################
+# tek                                                                        #
+##############################################################################
 echo "Building tek"
 cd "$top"/src/tek/
 pconfigure
