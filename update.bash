@@ -16,7 +16,7 @@ fi
 
 $sudo mkdir -p "$prefix"
 
-cat >"$prefix"/enter <<EOF
+$sudo tee "$prefix"/enter <<EOF
 export PATH="$prefix/bin:\$PATH"
 export PKG_CONFIG_PATH="$prefix/lib/pkgconfig:\$PKG_CONFIG_PATH"
 EOF
