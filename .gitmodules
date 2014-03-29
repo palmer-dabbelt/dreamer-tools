@@ -1,3 +1,6 @@
 [submodule "src/pconfigure"]
 	path = src/pconfigure
 	url = git://github.com/palmer-dabbelt/pconfigure.git
+[submodule "src/tek"]
+	path = src/tek
+	url = git://github.com/palmer-dabbelt/tek.git
