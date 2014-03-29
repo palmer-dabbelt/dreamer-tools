@@ -1,0 +1,3 @@
+[submodule "src/pconfigure"]
+	path = src/pconfigure
+	url = git://github.com/palmer-dabbelt/pconfigure.git
