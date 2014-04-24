@@ -34,13 +34,8 @@ source "$prefix"/enter
 ##############################################################################
 cd "$top"/src/pconfigure/
 
-if test -f "$prefix"/bin/pconfigure
-then
-    pconfigure
-else
-    rm -f Configfiles/local
-    ./bootstrap.sh --prefix "$prefix"
-fi
+rm -f Configfiles/local
+./bootstrap.sh --prefix "$prefix"
 
 make all all_install
 $sudo make install
