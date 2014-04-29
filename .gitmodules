@@ -16,3 +16,6 @@
 [submodule "src/flo-mwe"]
 	path = src/flo-mwe
 	url = git://github.com/palmer-dabbelt/flo-mwe.git
+[submodule "src/libocn"]
+	path = src/libocn
+	url = git://github.com/palmer-dabbelt/libocn.git
