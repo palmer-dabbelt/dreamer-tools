@@ -95,3 +95,11 @@ cd "$top"/src/libdrasm/
 pconfigure
 make all all_install
 $sudo make install
+
+##############################################################################
+# dreamer-par                                                                #
+##############################################################################
+cd "$top"/src/dreamer-par/
+pconfigure
+make all all_install
+$sudo make install
