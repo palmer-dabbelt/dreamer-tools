@@ -87,3 +87,11 @@ cd "$top"/src/flo-mwe/
 pconfigure
 make all all_install
 $sudo make install
+
+##############################################################################
+# libdrasm                                                                   #
+##############################################################################
+cd "$top"/src/libdrasm/
+pconfigure
+make all all_install
+$sudo make install

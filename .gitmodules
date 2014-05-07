@@ -19,3 +19,6 @@
 [submodule "src/libocn"]
 	path = src/libocn
 	url = git://github.com/palmer-dabbelt/libocn.git
+[submodule "src/libdrasm"]
+	path = src/libdrasm
+	url = git://github.com/palmer-dabbelt/libdrasm.git
