@@ -44,6 +44,15 @@ $sudo make install
 # tek                                                                        #
 ##############################################################################
 cd "$top"/src/tek/
+
+cat >Configfile.local <<EOF
+LANGUAGES += c++
+COMPILEOPTS += -O2 -march=native
+LINKOPTS    += -Wl,-O1
+COMPILEOPTS += -g
+LINKOPTS    += -g
+EOF
+
 pconfigure
 make all all_install
 $sudo make install
@@ -52,6 +61,15 @@ $sudo make install
 # libflo                                                                     #
 ##############################################################################
 cd "$top"/src/libflo/
+
+cat >Configfile.local <<EOF
+LANGUAGES += c++
+COMPILEOPTS += -O2 -march=native
+LINKOPTS    += -Wl,-O1
+COMPILEOPTS += -g
+LINKOPTS    += -g
+EOF
+
 pconfigure
 make all all_install
 $sudo make install
@@ -60,6 +78,15 @@ $sudo make install
 # vcddiff                                                                    #
 ##############################################################################
 cd "$top"/src/vcddiff/
+
+cat >Configfile.local <<EOF
+LANGUAGES += c++
+COMPILEOPTS += -O2 -march=native
+LINKOPTS    += -Wl,-O1
+COMPILEOPTS += -g
+LINKOPTS    += -g
+EOF
+
 pconfigure
 make all all_install
 $sudo make install
@@ -68,6 +95,15 @@ $sudo make install
 # libocn                                                                     #
 ##############################################################################
 cd "$top"/src/libocn/
+
+cat >Configfile.local <<EOF
+LANGUAGES += c++
+COMPILEOPTS += -O2 -march=native
+LINKOPTS    += -Wl,-O1
+COMPILEOPTS += -g
+LINKOPTS    += -g
+EOF
+
 pconfigure
 make all all_install
 $sudo make install
@@ -76,6 +112,15 @@ $sudo make install
 # flo-llvm                                                                   #
 ##############################################################################
 cd "$top"/src/flo-llvm/
+
+cat >Configfile.local <<EOF
+LANGUAGES += c++
+COMPILEOPTS += -O2 -march=native
+LINKOPTS    += -Wl,-O1
+COMPILEOPTS += -g
+LINKOPTS    += -g
+EOF
+
 pconfigure
 make all all_install
 $sudo make install
@@ -84,6 +129,15 @@ $sudo make install
 # flo-mwe                                                                    #
 ##############################################################################
 cd "$top"/src/flo-mwe/
+
+cat >Configfile.local <<EOF
+LANGUAGES += c++
+COMPILEOPTS += -O2 -march=native
+LINKOPTS    += -Wl,-O1
+COMPILEOPTS += -g
+LINKOPTS    += -g
+EOF
+
 pconfigure
 make all all_install
 $sudo make install
@@ -92,6 +146,15 @@ $sudo make install
 # libdrasm                                                                   #
 ##############################################################################
 cd "$top"/src/libdrasm/
+
+cat >Configfile.local <<EOF
+LANGUAGES += c++
+COMPILEOPTS += -O2 -march=native
+LINKOPTS    += -Wl,-O1
+COMPILEOPTS += -g
+LINKOPTS    += -g
+EOF
+
 pconfigure
 make all all_install
 $sudo make install
@@ -100,6 +163,15 @@ $sudo make install
 # dreamer-par                                                                #
 ##############################################################################
 cd "$top"/src/dreamer-par/
+
+cat >Configfile.local <<EOF
+LANGUAGES += c++
+COMPILEOPTS += -O2 -march=native
+LINKOPTS    += -Wl,-O1
+COMPILEOPTS += -g
+LINKOPTS    += -g
+EOF
+
 pconfigure
 make all all_install
 $sudo make install
