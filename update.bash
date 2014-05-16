@@ -29,6 +29,9 @@ export PKG_CONFIG_PATH="$prefix/lib/pkgconfig:\$PKG_CONFIG_PATH"
 EOF
 source "$prefix"/enter
 
+cpus="$(cat /proc/cpuinfo | grep -c ^processor)"
+export MAKEFLAGS="-j$cpus"
+
 ##############################################################################
 # pconfigure                                                                 #
 ##############################################################################
