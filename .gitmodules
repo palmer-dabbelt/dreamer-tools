@@ -25,3 +25,6 @@
 [submodule "src/libdrasm"]
 	path = src/libdrasm
 	url = git://github.com/palmer-dabbelt/libdrasm.git
+[submodule "src/vcd2step"]
+	path = src/vcd2step
+	url = git://github.com/palmer-dabbelt/vcd2step.git
