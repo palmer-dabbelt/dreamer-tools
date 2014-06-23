@@ -14,12 +14,31 @@ shift
 top="$(pwd)"
 prefix="$top/install"
 sudo=""
+master="false"
+check="false"
 
-if [[ "$1" != "" ]]
-then
-    prefix="$1"
-    sudo="sudo"
-fi
+while [[ "$1" != "" ]]
+do
+    if [[ "$1" == "--prefix" ]]
+    then
+        prefix="$2"
+        sudo="sudo"
+        shift
+        shift
+    elif [[ "$1" == "--master" ]]
+    then
+        master="true"
+        shift
+    elif [[ "$1" == "--check" ]]
+    then
+        check="true"
+        shift
+    else
+        echo "Unable to parse argument: $1" >2
+        echo "Did you know the syntax has changed?" >2
+        echo "Try --prefix" >2
+    fi
+done
 
 $sudo mkdir -p "$prefix"
 
@@ -31,6 +50,17 @@ source "$prefix"/enter
 
 cpus="$(cat /proc/cpuinfo | grep -c ^processor)"
 export MAKEFLAGS="-j$cpus"
+
+# If we've been requested to update everything to master then do so
+if [[ "$master" == "true" ]]
+then
+    for project in $(git submodule | cut -d' ' -f3)
+    do
+        cd "$top"/$project
+        git checkout master
+        git pull
+    done
+fi
 
 ##############################################################################
 # pconfigure                                                                 #
@@ -47,6 +77,23 @@ $sudo make install
 # tek                                                                        #
 ##############################################################################
 cd "$top"/src/tek/
+
+cat >Configfile.local <<EOF
+LANGUAGES += c++
+COMPILEOPTS += -O2 -march=native
+LINKOPTS    += -Wl,-O1
+COMPILEOPTS += -g
+LINKOPTS    += -g
+EOF
+
+pconfigure
+make all all_install
+$sudo make install
+
+##############################################################################
+# chisel-benchmarks                                                          #
+##############################################################################
+cd "$top"/src/chisel-benchmarks/
 
 cat >Configfile.local <<EOF
 LANGUAGES += c++
@@ -195,3 +242,17 @@ EOF
 pconfigure
 make all all_install
 $sudo make install
+
+# Now that we're done with everything, try and run the tests
+if [[ "$check" == "true" ]]
+then
+    cd $top
+    rm -rf check
+    for project in $(git submodule | cut -d' ' -f3)
+    do
+        cd "$top"/$project
+        make check
+        mkdir -p $top/check/$project
+        tar -cC check . | tar -xC $top/check/$project
+    done
+fi

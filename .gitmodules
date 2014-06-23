@@ -28,3 +28,6 @@
 [submodule "src/vcd2step"]
 	path = src/vcd2step
 	url = git://github.com/palmer-dabbelt/vcd2step.git
+[submodule "src/chisel-benchmarks"]
+	path = src/chisel-benchmarks
+	url = git://github.com/palmer-dabbelt/chisel-benchmarks.git
