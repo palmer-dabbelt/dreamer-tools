@@ -243,6 +243,23 @@ pconfigure
 make all all_install
 $sudo make install
 
+##############################################################################
+# chisel-torture                                                             #
+##############################################################################
+cd "$top"/src/chisel-torture/
+
+cat >Configfile.local <<EOF
+LANGUAGES += c++
+COMPILEOPTS += -O2 -march=native
+LINKOPTS    += -Wl,-O1
+COMPILEOPTS += -g
+LINKOPTS    += -g
+EOF
+
+pconfigure
+make all all_install
+$sudo make install
+
 # Now that we're done with everything, try and run the tests
 if [[ "$check" == "true" ]]
 then

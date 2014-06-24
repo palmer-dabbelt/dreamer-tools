@@ -31,3 +31,6 @@
 [submodule "src/chisel-benchmarks"]
 	path = src/chisel-benchmarks
 	url = git://github.com/palmer-dabbelt/chisel-benchmarks.git
+[submodule "src/chisel-torture"]
+	path = src/chisel-torture
+	url = git://github.com/palmer-dabbelt/chisel-torture.git
