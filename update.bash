@@ -16,7 +16,6 @@ prefix="$top/install"
 sudo=""
 master="false"
 check="false"
-bench="false"
 
 while [[ "$1" != "" ]]
 do
@@ -33,10 +32,6 @@ do
     elif [[ "$1" == "--check" ]]
     then
         check="true"
-        shift
-    elif [[ "$1" == "--benchmarks" ]]
-    then
-        bench="true"
         shift
     else
         echo "Unable to parse argument: $1" >2
@@ -98,11 +93,9 @@ $sudo make install
 ##############################################################################
 # chisel-benchmarks                                                          #
 ##############################################################################
-if [[ "$bench" == "true" ]]
-then
-    cd "$top"/src/chisel-benchmarks/
+cd "$top"/src/chisel-benchmarks/
 
-    cat >Configfile.local <<EOF
+cat >Configfile.local <<EOF
 LANGUAGES += c++
 COMPILEOPTS += -O2 -march=native
 LINKOPTS    += -Wl,-O1
@@ -110,10 +103,9 @@ COMPILEOPTS += -g
 LINKOPTS    += -g
 EOF
 
-    pconfigure
-    make all all_install
-    $sudo make install
-fi
+pconfigure
+make all all_install
+$sudo make install
 
 ##############################################################################
 # libflo                                                                     #
