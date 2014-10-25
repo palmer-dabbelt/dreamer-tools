@@ -205,40 +205,6 @@ make all all_install
 $sudo make install
 
 ##############################################################################
-# libdrasm                                                                   #
-##############################################################################
-cd "$top"/src/libdrasm/
-
-cat >Configfile.local <<EOF
-LANGUAGES += c++
-COMPILEOPTS += -O2 -march=native
-LINKOPTS    += -Wl,-O1
-COMPILEOPTS += -g
-LINKOPTS    += -g
-EOF
-
-pconfigure
-make all all_install
-$sudo make install
-
-##############################################################################
-# dreamer-par                                                                #
-##############################################################################
-cd "$top"/src/dreamer-par/
-
-cat >Configfile.local <<EOF
-LANGUAGES += c++
-COMPILEOPTS += -O2 -march=native
-LINKOPTS    += -Wl,-O1
-COMPILEOPTS += -g
-LINKOPTS    += -g
-EOF
-
-pconfigure
-make all all_install
-$sudo make install
-
-##############################################################################
 # vcd2step                                                                   #
 ##############################################################################
 cd "$top"/src/vcd2step/
