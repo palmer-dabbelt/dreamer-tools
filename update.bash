@@ -3,8 +3,14 @@
 if [[ "$1" != "--actually-run" ]]
 then
     git pull
-    git submodule init
-    git submodule update
+
+    if test -d /var/cache/git
+    then
+        git submodule update --init --recursive --reference /var/cache/git
+    else
+        git submodule update --init --recursive
+    fi
+
     $0 --actually-run $@
     exit $?
 fi
