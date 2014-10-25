@@ -56,7 +56,11 @@ export PKG_CONFIG_PATH="$prefix/lib/pkgconfig:\$PKG_CONFIG_PATH"
 EOF
 source "$prefix"/enter
 
-cpus="$(cat /proc/cpuinfo | grep -c ^processor)"
+cpus=1
+if test -f /proc/cpuinfo
+then
+    cpus="$(cat /proc/cpuinfo | grep -c ^processor)"
+fi
 export MAKEFLAGS="-j$cpus"
 
 # If we've been requested to update everything to master then do so
