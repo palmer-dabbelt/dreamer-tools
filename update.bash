@@ -127,7 +127,6 @@ cd "$top"/src/libflo/
 cat >Configfile.local <<EOF
 LANGUAGES += c++
 COMPILEOPTS += -O2 -march=native
-LINKOPTS    += -Wl,-O1
 COMPILEOPTS += -g
 LINKOPTS    += -g
 EOF
@@ -144,7 +143,6 @@ cd "$top"/src/vcddiff/
 cat >Configfile.local <<EOF
 LANGUAGES += c++
 COMPILEOPTS += -O2 -march=native
-LINKOPTS    += -Wl,-O1
 COMPILEOPTS += -g
 LINKOPTS    += -g
 EOF
@@ -161,7 +159,6 @@ cd "$top"/src/libocn/
 cat >Configfile.local <<EOF
 LANGUAGES += c++
 COMPILEOPTS += -O2 -march=native
-LINKOPTS    += -Wl,-O1
 COMPILEOPTS += -g
 LINKOPTS    += -g
 EOF
@@ -178,7 +175,6 @@ cd "$top"/src/flo-llvm/
 cat >Configfile.local <<EOF
 LANGUAGES += c++
 COMPILEOPTS += -O2 -march=native
-LINKOPTS    += -Wl,-O1
 COMPILEOPTS += -g
 LINKOPTS    += -g
 EOF
@@ -195,7 +191,6 @@ cd "$top"/src/flo-mwe/
 cat >Configfile.local <<EOF
 LANGUAGES += c++
 COMPILEOPTS += -O2 -march=native
-LINKOPTS    += -Wl,-O1
 COMPILEOPTS += -g
 LINKOPTS    += -g
 EOF
@@ -212,7 +207,6 @@ cd "$top"/src/vcd2step/
 cat >Configfile.local <<EOF
 LANGUAGES += c++
 COMPILEOPTS += -O2 -march=native
-LINKOPTS    += -Wl,-O1
 COMPILEOPTS += -g
 LINKOPTS    += -g
 EOF
@@ -229,7 +223,6 @@ cd "$top"/src/chisel-torture/
 cat >Configfile.local <<EOF
 LANGUAGES += c++
 COMPILEOPTS += -O2 -march=native
-LINKOPTS    += -Wl,-O1
 COMPILEOPTS += -g
 LINKOPTS    += -g
 EOF
