@@ -2,7 +2,9 @@
 
 if [[ "$1" != "--actually-run" ]]
 then
-    git pull
+    # The pull might fail, but that's OK, it just means we don't have
+    # the remote set up correctly.
+    git pull || true
 
     if test -d /var/cache/git
     then
