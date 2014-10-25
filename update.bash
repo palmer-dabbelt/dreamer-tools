@@ -271,10 +271,11 @@ if [[ "$check" == "true" ]]
 then
     cd $top
     rm -rf check
-    for project in $(git submodule | cut -d' ' -f3)
+    for project in $(git submodule | sed 's/^+/ /' | cut -d' ' -f3)
     do
         cd "$top"/$project
         make check
+        mkdir -p check
         mkdir -p $top/check/$project
         tar -cC check . | tar -xC $top/check/$project
     done
