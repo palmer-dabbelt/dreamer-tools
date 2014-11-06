@@ -231,6 +231,23 @@ pconfigure
 make all all_install
 $sudo make install
 
+##############################################################################
+# sbt                                                                        #
+##############################################################################
+if test ! -f "$prefix"/bin/sbt
+then
+    wget https://repo.typesafe.com/typesafe/ivy-releases/org.scala-sbt/sbt-launch/0.13.6/sbt-launch.jar?_ga=1.145208372.1898596055.1415302191 \
+        -O "$prefix"/bin/sbt-launch.jar
+
+    cat > "$prefix"/bin/sbt <<"EOF"
+#!/bin/bash
+SBT_OPTS="-Xms512M -Xmx1536M -Xss1M -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=256M"
+java $SBT_OPTS -jar `dirname $0`/sbt-launch.jar "$@"
+exit $?
+EOF
+    chmod oug+x "$prefix"/bin/sbt
+fi
+
 # Now that we're done with everything, try and run the tests
 if [[ "$check" == "true" ]]
 then
